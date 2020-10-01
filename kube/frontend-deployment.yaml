@@ -22,7 +22,7 @@ metadata:
     app: to-do-app
     tier: frontend
 spec:
-  replicas: 2  # number of replicas of frontEnd application
+  replicas: 1  # number of replicas of frontEnd application
   selector:
     matchLabels: 
       app: to-do-app
@@ -35,7 +35,7 @@ spec:
     spec:                 
       containers: 
       - name: to-do-app-frontend 
-        image: kdursoji91/to-do-app-frontend # docker image of frontend application
+        image: kdursoji91/to-do-app-frontend:1.0.0 # docker image of frontend application
         env: # Setting Environmental Variables
           -  name: SERVER_URI # Setting Backend URI from configMap
              valueFrom:
